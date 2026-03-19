@@ -1,184 +1,211 @@
-# User Stories – Endless Dusk
+# User Stories – Vampire Survivors Style Game
 
-Persona 1: Markus B. – Der "Zwischendurch"-Spieler
-Story 1: Schneller Start
+---
 
-Als Zwischendurch-Spieler
-möchte ich, dass das Spiel innerhalb von 3 Sekunden vom Hauptmenü startet,
-sodass ich sofort mit dem Gameplay beginnen kann.
+## Persona 1: Markus B. – Der „Zwischendurch“-Spieler
 
-Akzeptanzkriterien:
+### Story 1: Schneller Run-Start
+**Als** Zwischendurch-Spieler  
+**möchte ich**, dass ich aus dem Hauptmenü sofort einen Run starten kann  
+**sodass** ich ohne Wartezeit direkt ins Gameplay komme.
 
-Ladezeit vom Hauptmenü bis zum Start des Gameplays ≤ 3 Sekunden auf Standard-PC.
+**Akzeptanzkriterien:**
+- Zeit vom Klick auf „Start“ bis zur Spielfigur-Steuerung ≤ 3 Sekunden  
+- Kein erzwungenes Intro oder Cutscene vor dem ersten Run  
+- Ladezeit wird visuell angezeigt (z. B. Ladeindikator)
 
-Animationen und Intro-Screens sind optional, dürfen Ladezeit nicht überschreiten.
+**Definition of Done:**
+- Ladezeitmessung auf Zielhardware dokumentiert  
+- QA bestätigt reproduzierbare ≤ 3 Sekunden  
+- Kein Blocker zwischen Menü und Gameplay  
 
-Definition of Done:
+**Aufwand:** 5 Story Points
 
-Erfolgreiches Testen der Ladezeiten auf Standard-PC.
+---
 
-QA bestätigt nahtlosen Übergang zum Gameplay.
+### Story 2: Plattformunabhängige UI
+**Als** Zwischendurch-Spieler  
+**möchte ich**, dass die UI auf verschiedenen Bildschirmgrößen gut funktioniert  
+**sodass** ich das Spiel problemlos auf meinem PC spielen kann.
 
-Aufwand: 5 Story Points
+**Akzeptanzkriterien:**
+- UI skaliert korrekt für verschiedene Auflösungen (z. B. Full HD, WQHD)  
+- Alle UI-Elemente sind sichtbar und nicht abgeschnitten  
+- Bedienung vollständig mit Maus und Tastatur möglich  
 
-Story 2: Automatisches Zeitlimit
+**Definition of Done:**
+- QA testet mindestens 2 Auflösungen  
+- Keine überlappenden oder fehlenden UI-Elemente  
+- Alle Funktionen erreichbar  
 
-Als Zwischendurch-Spieler
-möchte ich, dass ein Run nach 30 Minuten automatisch stoppt,
-sodass ich einen klaren Endpunkt für meine kurze Spielsession habe.
+**Aufwand:** 5 Story Points
 
-Akzeptanzkriterien:
+---
 
-Run endet automatisch nach 30 Minuten.
+### Story 3: Automatische Angriffe
+**Als** Zwischendurch-Spieler  
+**möchte ich**, dass mein Charakter automatisch angreift  
+**sodass** ich mich nur auf Bewegung konzentrieren kann.
 
-Pop-up oder Hinweis erscheint 1 Minute vor Ende.
+**Akzeptanzkriterien:**
+- Angriffe erfolgen automatisch in festen Intervallen  
+- Spieler muss keine Angriffstaste drücken  
+- Angriffe treffen automatisch Gegner  
 
-Definition of Done:
+**Definition of Done:**
+- QA bestätigt, dass keine manuelle Eingabe nötig ist  
+- Angriffssystem funktioniert stabil über längere Runs  
 
-QA testet, dass das Spiel nach 30 Minuten korrekt stoppt.
+**Aufwand:** 3 Story Points
 
-Timer-Anzeige korrekt implementiert.
+---
 
-Aufwand: 3 Story Points
+### Story 4: Pause & Fortsetzen
+**Als** Zwischendurch-Spieler  
+**möchte ich**, das Spiel pausieren und fortsetzen können  
+**sodass** ich meine Session jederzeit unterbrechen kann.
 
-Story 3: Mobile Port-ready UI
+**Akzeptanzkriterien:**
+- Pause stoppt das komplette Spielgeschehen  
+- Fortsetzen setzt exakt an derselben Stelle fort  
+- Pause-Menü zeigt aktuelle Run-Infos  
 
-Als Zwischendurch-Spieler
-möchte ich, dass die UI sowohl auf PC als auch auf mobilen Geräten gut spielbar ist,
-sodass ich das Spiel flexibel überall spielen kann.
+**Definition of Done:**
+- QA testet mehrfaches Pausieren und Fortsetzen  
+- Keine Zustandsverluste im Spiel  
 
-Akzeptanzkriterien:
+**Aufwand:** 3 Story Points
 
-Responsive UI für mobile Bildschirmgrößen.
+---
 
-Steuerung auf Touchscreen getestet und funktional.
+## Persona 2: Lena K. – Die Roguelite-Strategin
 
-Definition of Done:
+### Story 5: Synergien beim Level-Up
+**Als** Roguelite-Strategin  
+**möchte ich**, Synergien direkt beim Level-Up sehen  
+**sodass** ich bessere strategische Entscheidungen treffen kann.
 
-QA prüft UI auf PC und Mobile Emulator.
+**Akzeptanzkriterien:**
+- Jede Auswahl zeigt Effekt und mögliche Synergien  
+- Beschreibung max. 2–3 Zeilen  
+- Synergien visuell hervorgehoben  
 
-Keine Funktionsverluste auf Mobile.
+**Definition of Done:**
+- QA prüft alle Synergien  
+- Texte sind verständlich und korrekt  
 
-Aufwand: 8 Story Points
+**Aufwand:** 5 Story Points
 
-Persona 2: Lena K. – Die Roguelite-Strategin
-Story 4: Level-Up Build Info
+---
 
-Als Roguelite-Strategin
-möchte ich, auf dem Level-up-Bildschirm eine kurze Beschreibung der Waffensynergien sehen,
-sodass ich schneller strategische Entscheidungen für meinen Build treffen kann.
+### Story 6: Unterschiedliche Start-Charaktere
+**Als** Roguelite-Strategin  
+**möchte ich**, verschiedene Charaktere wählen  
+**sodass** jeder Run neue Strategien ermöglicht.
 
-Akzeptanzkriterien:
+**Akzeptanzkriterien:**
+- Mindestens 3 Charaktere verfügbar  
+- Jeder Charakter hat:
+  - eigene Startwaffe  
+  - eigenen Bonus  
 
-Anzeige von Synergien jeder verfügbaren Waffe beim Level-Up.
+**Definition of Done:**
+- QA testet alle Charaktere  
+- Unterschiede sind im Gameplay spürbar  
 
-Tooltip oder kurze Beschreibung maximal 2 Zeilen.
+**Aufwand:** 8 Story Points
 
-Definition of Done:
+---
 
-QA bestätigt korrekt angezeigte Synergien.
+### Story 7: Run-Zusammenfassung
+**Als** Roguelite-Strategin  
+**möchte ich**, nach einem Run sehen, welche Builds ich genutzt habe  
+**sodass** ich meine Entscheidungen reflektieren kann.
 
-Tooltips korrekt positioniert und lesbar.
+**Akzeptanzkriterien:**
+- Anzeige nach Run-Ende mit:
+  - genutzten Waffen  
+  - Items  
+  - Level  
+  - Run-Dauer  
+- Anzeige erscheint automatisch nach dem Run  
 
-Aufwand: 5 Story Points
+**Definition of Done:**
+- QA prüft korrekte Anzeige nach mehreren Runs  
+- Daten sind vollständig und korrekt  
 
-Story 5: Verschiedene Start-Charaktere
+**Aufwand:** 3 Story Points
 
-Als Roguelite-Strategin
-möchte ich, verschiedene Charaktere mit einzigartigen Startfähigkeiten wählen,
-sodass jeder Run neue Strategien und Builds ermöglicht.
+---
 
-Akzeptanzkriterien:
+### Story 8: Meta-Progression
+**Als** Roguelite-Strategin  
+**möchte ich**, permanente Upgrades freischalten  
+**sodass** ich langfristig stärker werde.
 
-Mindestens 3 unterschiedliche Charaktere verfügbar.
+**Akzeptanzkriterien:**
+- Spieler erhält Währung nach Run  
+- Upgrade-System im Menü verfügbar  
+- Upgrades wirken sich auf zukünftige Runs aus  
 
-Jeder Charakter hat eindeutige Startfähigkeit.
+**Definition of Done:**
+- QA testet mehrere Runs mit Upgrades  
+- Boni werden korrekt angewendet  
 
-Definition of Done:
+**Aufwand:** 8 Story Points
 
-QA testet alle Startfähigkeiten auf Spielbarkeit.
+---
 
-Balancing der Startfähigkeiten dokumentiert.
+### Story 9: Einfluss auf Zufall (RNG)
+**Als** Roguelite-Strategin  
+**möchte ich**, meine Upgrade-Auswahl beeinflussen können  
+**sodass** ich gezielter Builds erstellen kann.
 
-Aufwand: 8 Story Points
+**Akzeptanzkriterien:**
+- Re-Roll Funktion vorhanden  
+- Mindestens 3 Auswahloptionen pro Level-Up  
+- Re-Rolls sind limitiert  
 
-Story 6: Build-Log speichern
+**Definition of Done:**
+- QA testet Nutzung und Limitierung  
+- Keine unendlichen Re-Rolls möglich  
 
-Als Roguelite-Strategin
-möchte ich, ein Log meiner getesteten Builds sehen,
-sodass ich meine Strategien über mehrere Runs verfolgen kann.
+**Aufwand:** 5 Story Points
 
-Akzeptanzkriterien:
+---
 
-Log zeigt Waffen, Level, Synergien und Run-Dauer.
+## Persona 3: Tom S. – Der Genre-Fan
 
-Zugriff über Hauptmenü oder Pause-Menü.
+### Story 10: Spürbares Progression-System
+**Als** Genre-Fan  
+**möchte ich**, schnell stärker werden  
+**sodass** sich das Spiel belohnend anfühlt.
 
-Definition of Done:
+**Akzeptanzkriterien:**
+- Level-Up innerhalb der ersten 60 Sekunden möglich  
+- Stärke des Spielers wächst sichtbar  
+- Gegner skalieren mit der Zeit  
 
-QA prüft Speicherfunktion und Log-Ansicht.
+**Definition of Done:**
+- QA bestätigt Progression im Early Game  
+- Kein stagnierendes Gameplay  
 
-Keine fehlerhaften oder unvollständigen Einträge.
+**Aufwand:** 8 Story Points
 
-Aufwand: 5 Story Points
+---
 
-Persona 3: Tom S. – Der Vampire Survivors-Fan
-Story 7: XP-System
+### Story 11: Konsistenter Pixel-Art Stil
+**Als** Genre-Fan  
+**möchte ich**, einen konsistenten Pixel-Art Stil erleben  
+**sodass** das Spiel visuell stimmig ist.
 
-Als Vampire Survivors-Fan
-möchte ich, durch das Sammeln von XP spürbar stärker werden,
-sodass das Spiel sich nicht wie ein billiger Klon anfühlt.
+**Akzeptanzkriterien:**
+- Einheitliche Pixelgröße  
+- Konsistente Farbpalette  
+- Einheitliche Animationen  
 
-Akzeptanzkriterien:
+**Definition of Done:**
+- QA visuelle Prüfung  
+- Style Guide eingehalten  
 
-Power-Level-Anstieg sichtbar innerhalb der ersten 5 Minuten.
-
-Fortschritt ist exponentiell spürbar.
-
-Definition of Done:
-
-QA bestätigt exponentielles Leveling.
-
-Keine Bugs beim XP-Sammeln oder Level-Up.
-
-Aufwand: 8 Story Points
-
-Story 8: Pixel-Art Grafikstil
-
-Als Vampire Survivors-Fan
-möchte ich, dass das Spiel einen konsistenten Pixel-Art-Stil hat,
-sodass das visuelle Erlebnis nostalgisch und ansprechend wirkt.
-
-Akzeptanzkriterien:
-
-Alle Charaktere, Gegner und Hintergründe im Pixel-Stil.
-
-Keine Inkonsistenzen oder Mixed-Styles.
-
-Definition of Done:
-
-QA visuelle Überprüfung aller Assets.
-
-Designer bestätigt Style Guide Konformität.
-
-Aufwand: 5 Story Points
-
-Story 9: Community-Modding-Unterstützung
-
-Als Vampire Survivors-Fan
-möchte ich, dass neue Charaktere, Waffen oder Maps über Modding hinzugefügt werden können,
-sodass das Spiel langfristig neue Inhalte bietet und mich motiviert.
-
-Akzeptanzkriterien:
-
-Modding-Schnittstelle dokumentiert und getestet.
-
-Mindestens ein modifiziertes Asset erfolgreich importiert und spielbar.
-
-Definition of Done:
-
-QA prüft Mod-Kompatibilität.
-
-Dokumentation für Spieler bereitgestellt.
-
-Aufwand: 13 Story Points
+**Aufwand:** 5 Story Points
