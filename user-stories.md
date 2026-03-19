@@ -1,4 +1,31 @@
-# User Stories – Vampire Survivors Style Game
+# User Stories – Endless Dusk
+
+## Definition of Ready (DoR)
+
+Eine User Story gilt in diesem Projekt als „Ready“, wenn folgende Kriterien erfüllt sind:
+
+### Inhaltliche Klarheit
+- Der Nutzen für den Spieler ist klar beschrieben
+- Die Funktion passt zum Core-Gameplay
+
+### Anforderungen & Verständnis
+- Akzeptanzkriterien sind vollständig und testbar formuliert
+- Offene fachliche Fragen wurden geklärt
+- Abhängigkeiten zu anderen Features sind identifiziert
+
+### Umsetzungsvorbereitung
+- Die Story ist klein genug für einen Sprint
+- Story Points wurden vom Team geschätzt
+- Technische Umsetzung ist grundsätzlich verstanden
+
+### Qualität & Testing
+- Eine Definition of Done ist vorhanden
+- Testbarkeit ist gegeben
+
+### Projektspezifisch
+- Auswirkungen auf Performance (z. B. viele Gegner) sind berücksichtigt
+- UI/UX passt zum bestehenden Spielstil
+- Keine Widersprüche zu bestehenden Spielmechaniken
 
 ---
 
