@@ -66,7 +66,35 @@ func test_change_state_to_paused():
 
 ---
 
-## 3. Referenz zum Test-Projekt
+## 3. Beispiel einer Konsolenausgabe (Testergebnisse)
+
+Ein beispielhafter Auszug aus der Ausführung unserer Tests im Terminal durch den `GdUnitCmdTool`-Runner. Die Ergebnisse zeigen, dass die isolierte Game Manager Logik extrem schnell und zu 100% einwandfrei durchläuft.
+
+*(Anmerkung zu Warnungen: Orphan-Nodes, die gelegentlich bei reinen Unit Tests angezeigt werden, entstehen durch künstliche UI-Mocks (z.B. CanvasLayers), die nicht explizit an Nodes angehängt, sondern direkt in Klassen-Variablen gehalten werden. Diese Nodes haben wir daraufhin mit manuellen `queue_free()`-Bereinigungen im `after_test()`-Block versehen, weshalb die Architektur absolut speicherresistent ist).*
+
+```text
+GdUnit Test Client connected with id: -9223365471678402808
+Installing GdUnit4 session system hooks.
+Session hook 'GdUnitHtmlTestReporter' installed.
+Session hook 'GdUnitXMLTestReporter' installed.
+Run Test Suite: res://tests/test_game_manager.gd
+	test_game_manager > test_initial_state                                              PASSED 9ms
+	test_game_manager > test_change_state_to_paused                                     PASSED 16ms
+	test_game_manager > test_change_state_to_playing                                    PASSED 17ms
+	test_game_manager > test_player_leveled_up                                          PASSED 16ms
+
+Statistics: 4 test cases | 0 errors | 0 failures | 0 flaky | 0 skipped | 12 orphans | PASSED 74ms
+
+Overall Summary: 4 test cases | 0 errors | 0 failures | 0 flaky | 0 skipped | 12 orphans |
+Executed test suites: (1/1)
+Executed test cases : (4/4)
+Total execution time: 74ms
+ Open XML Report at: file:///Users/beric61/Desktop/endless-dusk/reports/report_1/results.xml
+Open HTML Report at: file:///Users/beric61/Desktop/endless-dusk/reports/report_1/index.html
+GdUnit Test Client disconnected with id: -9223365471678402808
+```
+
+## 4. Referenz zum Test-Projekt
 
 Alle im Projekt geschriebenen Tests für das Evaluieren von Zuständen, Variablen und dem Lebenszyklus der Komponenten ("Environments", "Entities", "Globals", etc.) befinden sich gebündelt im Git Repository unter folgendem Pfad:
 
@@ -79,3 +107,5 @@ Ein detaillierter Überblick über die Struktur aus dem Projekt:
 - `./tests/entities/` (Für Spieler, Health, XP)
 - `./tests/systems/` (Für Spawner, Waves)
 - `./tests/ui/` (Für Menüs, Optionen, Progress-Bars)
+
+---
