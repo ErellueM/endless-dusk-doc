@@ -94,18 +94,22 @@ Ein beispielhafter Auszug aus der Ausführung unserer Tests im Terminal durch de
   GdUnit Test Client disconnected with id: -9223365471678402808
 ```
 
-## 4. Referenz zum Test-Projekt
+## 4. Referenz zum Testordner
 
 Alle im Projekt geschriebenen Tests für das Evaluieren von Zuständen, Variablen und dem Lebenszyklus der Komponenten ("Environments", "Entities", "Globals", etc.) befinden sich gebündelt im Git Repository unter folgendem Pfad:
 
 👉 **`./tests/`**
 
-Ein detaillierter Überblick über die Struktur aus dem Projekt:
-- `./tests/environments/` (Für Lichtquellen, Vfx)
-- `./tests/global/` (Für Singletons, Stats und Manager)
-- `./tests/maps/` (Für Kameras und Spawns)
-- `./tests/entities/` (Für Spieler, Health, XP)
-- `./tests/systems/` (Für Spawner, Waves)
-- `./tests/ui/` (Für Menüs, Optionen, Progress-Bars)
+Ein detaillierter Überblick über die Tests-Struktur aus dem Projekt:
+- `https://github.com/ErellueM/endless-dusk/tree/main/tests/entities` – Beinhaltet Tests für Kern-Spielfiguren (Spieler und Gegner), z.B. für Bewegung, Health-Management, Basis-Stats und die Leveling-Logik.
+- `https://github.com/ErellueM/endless-dusk/tree/main/tests/environments/lightSources` – Prüft die korrekte Funktion, Initialisierung und das Verhalten von Umgebungsobjekten wie dynamischen (Licht-)Quellen in der Welt.
+- `https://github.com/ErellueM/endless-dusk/tree/main/tests/global` – Tests für die global aktiven Nodes des Spiels (wie z.B. den AudioManager) auf das korrekte Laden von Assets und Abspielen von Sounds.
+- `https://github.com/ErellueM/endless-dusk/tree/main/tests/maps` – Hierbei wird die Map-Logik, z.B. die prozedurale Strukturierung, Grenzen oder Level-Bereiche isoliert geprüft.
+- `https://github.com/ErellueM/endless-dusk/tree/main/tests/systems` – Deckt alle systemübergreifenden Verwaltungs-Manager ab, hierzu zählt das automatische Gegner-Spawning, das Wave-Management und das Spieler-Inventar.
+- `https://github.com/ErellueM/endless-dusk/tree/main/tests/ui` – Testet die grafische UI-Ebene. Beispielsweise werden hier Interaktionen des Hauptmenüs, Menüsteuerung oder Character-Selection Screens simuliert.
+- `https://github.com/ErellueM/endless-dusk/tree/main/tests/weapons` – Validiert das komplette Waffen-System, inklusive korrekter Vererbung von der Basis-Waffe, Cooldown-Kalkulationen sowie das Spawnen und Verhalten von Range-Projektilen.
+- `https://github.com/ErellueM/endless-dusk/blob/main/tests/test_Global.gd` – Isoliert das zentrale Projekt-Autoload (Global.gd) auf Schreib-/Lesezugriffe, um übergreifende Spielstände (welcher Character wurde gewählt?) zu sichern.
+- `https://github.com/ErellueM/endless-dusk/blob/main/tests/test_game_manager.gd` – Testet die Kern-Zustandsmaschine des Spiels (Game-Loop). Geprüft werden nahtlose Übergänge zwischen PLAYING, PAUSED, LEVEL_UP und DEAD durch Mocking von UI-Layers.
+- `https://github.com/ErellueM/endless-dusk/blob/main/tests/test_time_label.gd` – Ein spezifischer UI-Element-Test; fokussiert sich darauf, ob die Timer-Logik die voranschreitende Match-Time korrekt für das HUD berechnet und referenziert.
 
 ---
