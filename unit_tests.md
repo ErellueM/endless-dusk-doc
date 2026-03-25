@@ -98,10 +98,10 @@ Ein beispielhafter Auszug aus der Ausführung unserer Tests im Terminal durch de
 
 Alle im Projekt geschriebenen Tests für das Evaluieren von Zuständen, Variablen und dem Lebenszyklus der Komponenten ("Environments", "Entities", "Globals", etc.) befinden sich gebündelt im Git Repository unter folgendem Pfad:
 
-👉 **`./tests/`**
+👉 **`./tests/** : https://github.com/ErellueM/endless-dusk/tree/main/tests`:
 
 Ein detaillierter Überblick über die Tests-Struktur aus dem Projekt:
-- `https://github.com/ErellueM/endless-dusk/tree/main/tests/entities` – Beinhaltet Tests für Kern-Spielfiguren (Spieler und Gegner), z.B. für Bewegung, Health-Management, Basis-Stats und die Leveling-Logik.
+- `https://github.com/Erel lueM/endless-dusk/tree/main/tests/entities` – Beinhaltet Tests für Kern-Spielfiguren (Spieler und Gegner), z.B. für Bewegung, Health-Management, Basis-Stats und die Leveling-Logik.
 - `https://github.com/ErellueM/endless-dusk/tree/main/tests/environments/lightSources` – Prüft die korrekte Funktion, Initialisierung und das Verhalten von Umgebungsobjekten wie dynamischen (Licht-)Quellen in der Welt.
 - `https://github.com/ErellueM/endless-dusk/tree/main/tests/global` – Tests für die global aktiven Nodes des Spiels (wie z.B. den AudioManager) auf das korrekte Laden von Assets und Abspielen von Sounds.
 - `https://github.com/ErellueM/endless-dusk/tree/main/tests/maps` – Hierbei wird die Map-Logik, z.B. die prozedurale Strukturierung, Grenzen oder Level-Bereiche isoliert geprüft.
