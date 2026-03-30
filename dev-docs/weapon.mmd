@@ -1,0 +1,28 @@
+flowchart
+    subgraph "Weapon Components"
+        Weapon
+        AttackComponent
+        DeliveryComponent
+        EffectComponent
+    end
+    Weapon --"attackComponent.execute(stats, delivery, effects)"--> AttackComponent
+    AttackComponent --> AttackAnimation
+    AttackComponent --"delivery.deliver(stats, effects)"--> DeliveryComponent
+    DeliveryComponent --"effect.apply(stats, target)"--> EffectComponent
+    DeliveryComponent --> DeliveryAnimation
+    EffectComponent --> EffectAnimation
+
+    subgraph "Effects"
+        InstantDamage
+        DamageOverTime
+        Slow
+        Stun
+        Knockback
+    end
+
+    subgraph "Deliveries"
+        Projectile
+        AreaOfEffect --> Melee
+        AreaOfEffect --> Aura
+        DirectHit
+    end
