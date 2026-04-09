@@ -4,7 +4,8 @@ Hier ist das aktualisierte Markdown-Dokument. Ich habe einen neuen Abschnitt zur
 
 # GDScript-Linting (Lokal & CI)
 
-Dieser Leitfaden beschreibt die Einrichtung einer automatisierten Code-Prüfung (Linting) für unser Godot-Projekt. Ziel ist es, durchgehend sauberen Code nach dem offiziellen GDScript-Styleguide zu gewährleisten.
+Dieser Leitfaden beschreibt die Einrichtung einer automatisierten Code-Prüfung (Linting) für unser Godot-Projekt "Endless Dusk".
+Ziel ist es, durchgehend sauberen Code nach dem offiziellen GDScript-Styleguide zu gewährleisten.
 
 ## 1. Lokale Einrichtung (Entwicklung)
 
