@@ -21,9 +21,9 @@ pip install gdtoolkit
 1.  **Erweiterung:** Suche im VS Code Marketplace nach **"GDScript Toolkit"** und installiere diese.
 2.  **Nutzen:** Fehler wie ungenutzte Variablen oder falsche Einrückungen werden nun direkt im Editor durch Wellenlinien markiert.
 3.  **Manueller Check:** Das gesamte Projekt kann jederzeit manuell im Terminal geprüft werden:
-    ```bash
-    gdlint .
-    ```
+```bash
+gdlint .
+```
 
 ---
 
