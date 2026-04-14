@@ -110,7 +110,7 @@ jobs:
           find . -type d \( -path "./addons" -o -path "./tests" \) -prune -o -name "*.gd" -print | xargs gdlint || true
 ```
 
-### [.gdlintrc](https://github.com/ErellueM/endless-dusk/blob/main/.gdlintrc)
+### 📄 [.gdlintrc](https://github.com/ErellueM/endless-dusk/blob/main/.gdlintrc)
 
 ```
 disable: ["class-definitions-order", "unused-argument", "no-elif-return", "no-else-return", "trailing-whitespace"]
