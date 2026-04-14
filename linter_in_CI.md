@@ -7,18 +7,23 @@ Dieser Leitfaden beschreibt die Einrichtung einer automatisierten Code-Prüfung 
 Bevor der Code in die Cloud geht, wird das Toolkit lokal installiert.
 
 ### Installation des Toolkits
+
 Das Tooling basiert auf Python. Zur Installation wird das Terminal genutzt:
+
 ```bash
 pip install gdtoolkit
 ```
 
 ### Konfiguration
+
 Wir nutzen eine `pyproject.toml` im Hauptverzeichnis des Projekts. Diese Datei sorgt dafür, dass bestimmte "Pingeligkeits-Fehler" (wie die genaue Reihenfolge von Variablen und Signalen) ignoriert werden.
 
 ### Integration in VS Code
+
 1.  **Erweiterung:** Suche im VS Code Marketplace nach **"GDScript Toolkit"** und installiere diese.
 2.  **Nutzen:** Fehler werden direkt im Editor markiert.
 3.  **Manueller Check:** Das gesamte Projekt kann jederzeit manuell geprüft werden:
+
 ```bash
 find . -type d \( -path "./addons" -o -path "./tests" \) -prune -o -name "*.gd" -print | xargs gdlint
 ```
@@ -30,10 +35,12 @@ find . -type d \( -path "./addons" -o -path "./tests" \) -prune -o -name "*.gd" 
 Die Continuous Integration (CI) stellt sicher, dass wir bei jedem Push einen Bericht über die Code-Qualität erhalten.
 
 ### Verzeichnisstruktur
+
 Der Workflow muss exakt an diesem Ort liegen:
 `.github/workflows/gdscript-lint.yml`
 
 ### Der "Safe-Mode"
+
 In unserer CI ist der Linter so eingestellt, dass er den Build **nicht abbricht** (`|| true`). Das bedeutet: Die Action wird grün, aber du kannst im Log sehen, welche Dateien noch "schmutzig" sind. Dies verhindert, dass kleine Formatierungsfehler wichtige Merges blockieren.
 
 ---
@@ -43,14 +50,19 @@ In unserer CI ist der Linter so eingestellt, dass er den Build **nicht abbricht*
 Wenn `gdlint` Fehler anzeigt, gibt es zwei Wege diese zu lösen:
 
 ### A. Automatische Formatierung mit `gdformat`
+
 Für Massenfehler wie falsche Einrückungen oder Leerzeichen:
+
 ```bash
 gdformat .
 ```
-*Dies passt alle `.gd`-Dateien automatisch an den Styleguide an.*
+
+_Dies passt alle `.gd`-Dateien automatisch an den Styleguide an._
 
 ### B. Manuelle Korrekturen & Klasseneinhaltung
+
 Der Linter bevorzugt eine feste Struktur. Sollten Fehler bezüglich der `class-definitions-order` auftauchen, hilft oft folgende Reihenfolge innerhalb der Datei:
+
 1. `extends` / `class_name`
 2. `signals`
 3. `enums` / `constants`
@@ -63,17 +75,19 @@ Der Linter bevorzugt eine feste Struktur. Sollten Fehler bezüglich der `class-d
 ## Anhang: Projekt-Dateien
 
 Hier sind die aktuellen Konfigurationen, die im Projekt-Root liegen müssen:
+
 ### 📁 [.github/workflows](https://github.com/ErellueM/endless-dusk/tree/main/.github/workflows)
+
 ### 📄 [gdscript-lint.yml](https://github.com/ErellueM/endless-dusk/blob/main/.github/workflows/gdscript-lint.yml)
-### 📄 [pyproject.toml](https://github.com/ErellueM/endless-dusk/blob/main/.github/workflows/pyproject.toml)
+
 ```yaml
 name: GDScript Linting (gdlint)
 
 on:
   push:
-    branches: [ "main" ]
+    branches: ["main"]
   pull_request:
-    branches: [ "main" ]
+    branches: ["main"]
 
 jobs:
   lint:
@@ -96,17 +110,13 @@ jobs:
           find . -type d \( -path "./addons" -o -path "./tests" \) -prune -o -name "*.gd" -print | xargs gdlint || true
 ```
 
-### 📄 `pyproject.toml`
-```toml
-[tool.gdlint]
-max-line-length = 200
-class-definitions-order = false
-unused-argument = false
-no-elif-return = false
-no-else-return = false
-duplicated-load = false
+### [.gdlintrc](https://github.com/ErellueM/endless-dusk/blob/main/.gdlintrc)
+
+```
+disable: ["class-definitions-order", "unused-argument", "no-elif-return", "no-else-return", "trailing-whitespace"]
+max-line-length: 200
 ```
 
 ---
 
-*Dieser Prozess sorgt dafür, dass sich Code-Reviews auf die Logik statt auf die Formatierung konzentrieren können.*
+_Dieser Prozess sorgt dafür, dass sich Code-Reviews auf die Logik statt auf die Formatierung konzentrieren können._
